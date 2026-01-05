@@ -13,7 +13,7 @@ Projeto separado em web-api e front
 
 Dentro da pasta raiz executar o comando:
 
-`$env:ASPNETCORE_ENVIRONMENT="Development"`
+`$env:ASPNETCORE_ENVIRONMENT="Development"` </br>
 `dotnet run --project .\web-api\src\Controle.Gastos.Residenciais.Api\Controle.Gastos.Residenciais.Api.csproj -c Debug -- --help`
 
 ###### front
