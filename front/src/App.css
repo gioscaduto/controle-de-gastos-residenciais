@@ -1,0 +1,53 @@
+.brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.sider-brand {
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.app-sider {
+  background: #0f172a;
+}
+
+.app-menu {
+  border-inline-end: none;
+  padding: 8px;
+}
+
+.app-menu .ant-menu-item {
+  border-radius: 10px;
+  margin: 4px 0;
+}
+
+.app-menu .ant-menu-item-selected {
+  background: linear-gradient(90deg, #1f2a44 0%, #28385f 100%);
+}
+
+.app-content {
+  padding: 24px;
+  background: linear-gradient(180deg, #f5f7fb 0%, #eef1f7 100%);
+}
+
+.content-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  min-height: calc(100vh - 50px);
+  box-shadow: 0 12px 40px -18px rgba(0, 0, 0, 0.25);
+}
+
+.page-header {
+  padding: 8px 0;
+}
+
+.page-subtitle {
+  display: block;
+}
+
+.app-footer {
+  text-align: center;
+}
