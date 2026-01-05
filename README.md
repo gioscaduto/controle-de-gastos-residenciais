@@ -1,4 +1,4 @@
-# Controle de Gastos de Residenciais
+# Controle de Gastos Residenciais
 
 Projeto separado em web-api e front
 
