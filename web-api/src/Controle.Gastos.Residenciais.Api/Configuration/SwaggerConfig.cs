@@ -46,10 +46,10 @@ namespace Controle.Gastos.Residenciais.Api.Configuration
         public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, 
             IApiVersionDescriptionProvider provider, IWebHostEnvironment env)
         {
-            if(env.IsProduction())
-            {
-                app.UseMiddleware<SwaggerAuthorizedMiddleware>();
-            }
+            //if(env.IsProduction())
+            //{
+            //    app.UseMiddleware<SwaggerAuthorizedMiddleware>();
+            //}
 
             app.UseSwagger();
             app.UseSwaggerUI(

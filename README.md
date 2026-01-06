@@ -11,16 +11,24 @@ Projeto separado em web-api e front
 
 ###### web-api 
 
-Dentro da pasta raiz executar o comando:
+Dentro da pasta raiz execute o comando:
 
 `$env:ASPNETCORE_ENVIRONMENT="Development"` </br>
 `dotnet run --project .\web-api\src\Controle.Gastos.Residenciais.Api\Controle.Gastos.Residenciais.Api.csproj -c Debug -- --help`
 
 ###### front
 
-Dentro da pasta front executar o comando:
+Dentro da pasta front execute o comando:
 
 `npm run dev` 
+
+###### Para executar no docker com configurações do ambiente de desenvolvimento 
+
+Dentro da pasta raiz execute o comando:
+
+`docker compose up --build`
+
+Abra o navegador na url: http://localhost:3000/
 
 ###### Sugestão de futuras melhorias
 

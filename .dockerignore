@@ -1,0 +1,44 @@
+# Diretórios gerais
+**/bin/
+**/obj/
+**/out/
+**/node_modules/
+**/dist/
+**/.vscode/
+**/.vs/
+**/.idea/
+
+# Arquivos de build
+**/wwwroot/dist/
+**/wwwroot/lib/
+**/.git/
+**/.gitignore
+**/.gitattributes
+
+# Arquivos de desenvolvimento
+**/*.md
+**/.editorconfig
+**/.env
+**/.env.local
+**/.env.development
+**/.env.test
+**/.env.production
+
+# Arquivos de teste
+**/tests/
+**/*.Tests/
+**/TestResults/
+
+# Logs e cache
+**/logs/
+**/*.log
+**/.DS_Store
+**/Thumbs.db
+**/*.cache
+**/.npm
+**/.eslintcache
+
+# Arquivos do Docker
+**/Dockerfile*
+**/docker-compose*
+**/.dockerignore

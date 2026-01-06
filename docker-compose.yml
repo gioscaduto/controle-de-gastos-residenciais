@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./web-api
+      dockerfile: Dockerfile
+    container_name: controle-gastos-api
+    ports:
+      - "43779:8080"
+      - "44365:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/controle-gastos.db
+    volumes:
+      - api-data:/app/data
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: controle-gastos-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - app-network
+    restart: unless-stopped
+    environment:
+      - VITE_API_URL=http://localhost:5000
+
+volumes:
+  api-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
