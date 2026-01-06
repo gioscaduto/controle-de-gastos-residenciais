@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { App, Table, Tag } from 'antd'
+import { Table, Tag } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import { useQuery } from '@tanstack/react-query'
 import { PageHeader } from '../components/PageHeader'
@@ -8,13 +8,10 @@ import { listTransacoesPorPessoa } from '../../application/services/transacaoSer
 import { formatarMoeda } from '../shared/moeda'
 
 export function TransacaoPessoaPage() {
-  const { message } = App.useApp()
-
   const transacoesPessoaQuery = useQuery<TransacaoPessoaResumo[]>({
     queryKey: ['transacoes', 'pessoa'],
     queryFn: listTransacoesPorPessoa,
     placeholderData: (previousData) => previousData ?? [],
-    onError: () => message.error('Não foi possível carregar as transações por pessoa'),
     refetchOnMount: 'always',
     refetchOnWindowFocus: true,
     refetchOnReconnect: true,
@@ -71,7 +68,7 @@ export function TransacaoPessoaPage() {
       <PageHeader title="Transações por pessoa" subtitle="Totais consolidados por pessoa" />
 
       <Table
-        rowKey={(item) => item.pessoa}
+        rowKey={(item) => item.pessoa!}
         style={{ marginTop: 16 }}
         loading={transacoesPessoaQuery.isLoading}
         dataSource={transacoesPessoaQuery.data ?? []}

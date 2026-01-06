@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { App, Table, Tag } from 'antd'
+import { Table, Tag } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import { useQuery } from '@tanstack/react-query'
 import { PageHeader } from '../components/PageHeader'
@@ -8,13 +8,10 @@ import { listTransacoesPorCategoria } from '../../application/services/transacao
 import { formatarMoeda } from '../shared/moeda'
 
 export function TransacaoCategoriaPage() {
-  const { message } = App.useApp()
-
   const transacoesCategoriaQuery = useQuery<TransacaoCategoriaResumo[]>({
     queryKey: ['transacoes', 'categoria'],
     queryFn: listTransacoesPorCategoria,
     placeholderData: (previousData) => previousData ?? [],
-    onError: () => message.error('Não foi possível carregar as transações por categoria'),
     refetchOnMount: 'always',
     refetchOnWindowFocus: true,
     refetchOnReconnect: true,
@@ -71,7 +68,7 @@ export function TransacaoCategoriaPage() {
       <PageHeader title="Transações por categoria" subtitle="Totais consolidados por categoria" />
 
       <Table
-        rowKey={(item) => item.categoria}
+        rowKey={(item) => item.categoria!}
         style={{ marginTop: 16 }}
         loading={transacoesCategoriaQuery.isLoading}
         dataSource={transacoesCategoriaQuery.data ?? []}

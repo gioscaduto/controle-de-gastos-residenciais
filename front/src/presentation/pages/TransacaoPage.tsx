@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { App, Button, Form, Input, InputNumber, Modal, Select, Table, Tag } from 'antd'
+import { App, Button, Form, InputNumber, Modal, Select, Table, Tag } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
@@ -164,7 +164,7 @@ export function TransacaoPage() {
       </PageHeader>
 
       <Table
-        rowKey={(item) => item.id}
+        rowKey={(item) => item.id!}
         style={{ marginTop: 16 }}
         loading={transacaoQuery.isLoading}
         dataSource={transacaoQuery.data ?? []}

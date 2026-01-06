@@ -156,7 +156,7 @@ export function PessoaPage() {
 
       <Table
         style={{ marginTop: 16 }}
-        rowKey={(item) => item.id}
+        rowKey={(item) => item.id!}
         loading={pessoasQuery.isLoading}
         dataSource={pessoasQuery.data ?? []}
         columns={columns}

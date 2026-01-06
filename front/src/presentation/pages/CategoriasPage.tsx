@@ -170,7 +170,7 @@ export function CategoriaPage() {
 
       <Table
         style={{ marginTop: 16 }}
-        rowKey={(item) => item.id}
+        rowKey={(item) => item.id!}
         loading={categoriasQuery.isLoading}
         dataSource={categoriasQuery.data ?? []}
         columns={columns}
